@@ -17,7 +17,8 @@ class SortTest {
                 Arguments.of(new SelectionSort()),
                 Arguments.of(new InsertionSort()),
                 Arguments.of(new ShellSort()),
-                Arguments.of(new MergeSort())
+                Arguments.of(new MergeSort()),
+                Arguments.of(new QuickSort())
         );
     }
 
