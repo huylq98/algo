@@ -6,6 +6,7 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import sorting.*;
 
+import java.util.Arrays;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
@@ -38,9 +39,16 @@ class SortTest {
     }
 
     @Test
-    void radixSort() {
+    void numericRadixSort() {
         int[] sorted = {1330, 1594, 4586, 4725, 5729, 8792};
         int[] unsorted = {4725, 4586, 1330, 8792, 1594, 5729};
         assertArrayEquals(sorted, new RadixSort().sort(unsorted, 10, 4));
+    }
+
+    @Test
+    void characteristicRadixSort() {
+        String[] sorted = {"abcde", "bbbbb", "bcdef", "dbaqc", "omadd"};
+        String[] unsorted = {"bcdef", "dbaqc", "abcde", "omadd", "bbbbb"};
+        System.out.println(Arrays.toString(new RadixSort().sort(unsorted, 128, 5)));
     }
 }
