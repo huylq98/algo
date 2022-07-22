@@ -1,6 +1,5 @@
 package sort;
 
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -36,5 +35,12 @@ class SortTest {
         int[] sorted = {2, 2, 3, 4, 5, 7, 8, 8, 9, 10};
         int[] unsorted = {2, 5, 9, 8, 2, 8, 7, 10, 4, 3};
         assertArrayEquals(sorted, new CountingSort().sort(unsorted, 1, 10));
+    }
+
+    @Test
+    void radixSort() {
+        int[] sorted = {1330, 1594, 4586, 4725, 5729, 8792};
+        int[] unsorted = {4725, 4586, 1330, 8792, 1594, 5729};
+        assertArrayEquals(sorted, new RadixSort().sort(unsorted, 10, 4));
     }
 }
