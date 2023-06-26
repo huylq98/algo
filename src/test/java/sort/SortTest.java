@@ -50,5 +50,6 @@ class SortTest {
         String[] sorted = {"abcde", "bbbbb", "bcdef", "dbaqc", "omadd"};
         String[] unsorted = {"bcdef", "dbaqc", "abcde", "omadd", "bbbbb"};
         System.out.println(Arrays.toString(new RadixSort().sort(unsorted, 128, 5)));
+        assertArrayEquals(sorted, unsorted);
     }
 }
